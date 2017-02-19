@@ -46,12 +46,11 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self.navigationController pushViewController:self.playVCarray[indexPath.row] animated:YES];
+    BaseViewController *baseVC = (BaseViewController *)self.playVCarray[indexPath.row];
+  //  baseVC.videoPath = @"http://m3u8back.gougouvideo.com/m3u8_yyyy?i=4275259";
+    baseVC.videoPath = @"http://v1.mukewang.com/3e35cbb0-c8e5-4827-9614-b5a355259010/L.mp4";
+    [self.navigationController pushViewController:baseVC animated:YES];
 }
-
-
-
-
 
 
 #pragma mark - lazy

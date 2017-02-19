@@ -1,22 +1,22 @@
 //
-//  LZBAVPlayerVC.m
+//  BaseViewController.m
 //  LZBPlayer
 //
 //  Created by Apple on 2017/2/19.
 //  Copyright © 2017年 Apple. All rights reserved.
 //
 
-#import "LZBAVPlayerVC.h"
+#import "BaseViewController.h"
 
-@interface LZBAVPlayerVC ()
+@interface BaseViewController ()
 
 @end
 
-@implementation LZBAVPlayerVC
+@implementation BaseViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor redColor];;
+    // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {

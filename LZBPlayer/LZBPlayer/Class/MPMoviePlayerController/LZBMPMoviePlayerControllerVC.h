@@ -6,8 +6,9 @@
 //  Copyright © 2017年 Apple. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "BaseViewController.h"
 
-@interface LZBMPMoviePlayerControllerVC : UIViewController
+
+@interface LZBMPMoviePlayerControllerVC : BaseViewController
 
 @end

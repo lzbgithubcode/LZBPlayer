@@ -18,6 +18,8 @@
 		18B36EB01E59B87600287D8B /* LZBMPMoviePlayerControllerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B36EAF1E59B87600287D8B /* LZBMPMoviePlayerControllerVC.m */; };
 		18B36EB31E59B89D00287D8B /* LZBMPMoviePlayerViewControllerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B36EB21E59B89D00287D8B /* LZBMPMoviePlayerViewControllerVC.m */; };
 		18B36EB61E59B8B400287D8B /* LZBAVPlayerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B36EB51E59B8B400287D8B /* LZBAVPlayerVC.m */; };
+		18B36EB91E59BA8000287D8B /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B36EB81E59BA8000287D8B /* BaseViewController.m */; };
+		18B36EBC1E59C23B00287D8B /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18B36EBB1E59C23B00287D8B /* MediaPlayer.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +62,9 @@
 		18B36EB21E59B89D00287D8B /* LZBMPMoviePlayerViewControllerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZBMPMoviePlayerViewControllerVC.m; sourceTree = "<group>"; };
 		18B36EB41E59B8B400287D8B /* LZBAVPlayerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZBAVPlayerVC.h; sourceTree = "<group>"; };
 		18B36EB51E59B8B400287D8B /* LZBAVPlayerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZBAVPlayerVC.m; sourceTree = "<group>"; };
+		18B36EB71E59BA8000287D8B /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		18B36EB81E59BA8000287D8B /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		18B36EBB1E59C23B00287D8B /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18B36EBC1E59C23B00287D8B /* MediaPlayer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,6 +100,7 @@
 				18B36E901E59A11C00287D8B /* LZBPlayerTests */,
 				18B36E9B1E59A11C00287D8B /* LZBPlayerUITests */,
 				18B36E751E59A11B00287D8B /* Products */,
+				18B36EBA1E59C23B00287D8B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -156,6 +163,8 @@
 				18B36EAB1E59B7D300287D8B /* AVPlayer */,
 				18B36EAC1E59B7D300287D8B /* MPMoviePlayerController */,
 				18B36EAD1E59B7D300287D8B /* MPMoviePlayerViewController */,
+				18B36EB71E59BA8000287D8B /* BaseViewController.h */,
+				18B36EB81E59BA8000287D8B /* BaseViewController.m */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -185,6 +194,14 @@
 				18B36EB21E59B89D00287D8B /* LZBMPMoviePlayerViewControllerVC.m */,
 			);
 			path = MPMoviePlayerViewController;
+			sourceTree = "<group>";
+		};
+		18B36EBA1E59C23B00287D8B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				18B36EBB1E59C23B00287D8B /* MediaPlayer.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -325,6 +342,7 @@
 				18B36E7F1E59A11B00287D8B /* ViewController.m in Sources */,
 				18B36E7C1E59A11B00287D8B /* AppDelegate.m in Sources */,
 				18B36E791E59A11B00287D8B /* main.m in Sources */,
+				18B36EB91E59BA8000287D8B /* BaseViewController.m in Sources */,
 				18B36EB31E59B89D00287D8B /* LZBMPMoviePlayerViewControllerVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -475,6 +493,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = LZBPlayer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lzbcoder.LZBPlayer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -486,6 +505,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = LZBPlayer/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lzbcoder.LZBPlayer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
