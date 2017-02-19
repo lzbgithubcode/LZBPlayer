@@ -7,23 +7,78 @@
 //
 
 #import "ViewController.h"
+#import "LZBAVPlayerVC.h"
+#import "LZBMPMoviePlayerControllerVC.h"
+#import "LZBMPMoviePlayerViewControllerVC.h"
 
-@interface ViewController ()
+@interface ViewController ()<UITableViewDelegate, UITableViewDataSource>
 
+@property (nonatomic, strong) UITableView *tableView;
+
+@property (nonatomic, strong) NSArray <NSString *> *playStyleArray;
+@property (nonatomic, strong) NSArray <UIViewController *> *playVCarray;
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+     self.title = @"选择播放器播放视频";
+    [self.view addSubview:self.tableView];
+    
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return self.playStyleArray.count;
 }
 
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *cellID = @"cellID";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
+    if(cell == nil)
+        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
+    cell.textLabel.text = self.playStyleArray[indexPath.row];
+    return cell;
 }
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self.navigationController pushViewController:self.playVCarray[indexPath.row] animated:YES];
+}
+
+
+
+
+
+
+#pragma mark - lazy
+- (UITableView *)tableView
+{
+  if(_tableView == nil)
+  {
+      _tableView = [[UITableView alloc]initWithFrame:self.view.bounds style:UITableViewStylePlain];
+      _tableView.delegate = self;
+      _tableView.dataSource = self;
+  }
+    return _tableView;
+}
+
+- (NSArray<NSString *> *)playStyleArray
+{
+    return @[@"MPMoviePlayerController播放视频",@"MPMoviePlayerViewController播放视频",@"AVPlayer播放视频"];
+}
+
+- (NSArray<UIViewController *> *)playVCarray
+{
+    return @[[[LZBMPMoviePlayerControllerVC alloc]init],[[LZBMPMoviePlayerViewControllerVC alloc]init],[[LZBAVPlayerVC alloc]init]];
+}
+
+
+
+
 
 
 @end
