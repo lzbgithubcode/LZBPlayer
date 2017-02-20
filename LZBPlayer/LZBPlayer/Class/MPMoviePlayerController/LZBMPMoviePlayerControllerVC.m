@@ -10,9 +10,10 @@
 #import <MediaPlayer/MediaPlayer.h>
 
 @interface LZBMPMoviePlayerControllerVC ()
+
 @property (nonatomic, strong) MPMoviePlayerController *player;
 
-@property (nonatomic, strong)  UIButton *playerButton;
+
 
 @end
 
@@ -21,10 +22,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor grayColor];
-    [self player];
-    self.playerButton.center = self.view.center;
-    self.playerButton.bounds = CGRectMake(0, 0, 100, 44);
-    
 }
 
 - (void)playerButtonClick:(UIButton *)playButton
@@ -100,19 +97,8 @@
     return _player;
 }
 
--(UIButton *)playerButton
-{
-  if(_playerButton == nil)
-  {
-      _playerButton = [UIButton buttonWithType:UIButtonTypeCustom];
-      [_playerButton setTitle:@"播放" forState:UIControlStateNormal];
-      [_playerButton setTitle:@"停止" forState:UIControlStateSelected];
-      [_playerButton addTarget:self action:@selector(playerButtonClick:) forControlEvents:UIControlEventTouchUpInside];
-      [self.view addSubview:_playerButton];
-      _playerButton.backgroundColor = [UIColor redColor];
-  }
-    return _playerButton;
-}
+
+
 
 
 

@@ -7,9 +7,10 @@
 //
 
 #import "LZBMPMoviePlayerViewControllerVC.h"
+#import <MediaPlayer/MediaPlayer.h>
 
 @interface LZBMPMoviePlayerViewControllerVC ()
-
+@property (nonatomic, strong) MPMoviePlayerViewController *player;
 @end
 
 @implementation LZBMPMoviePlayerViewControllerVC
@@ -19,19 +20,24 @@
     self.view.backgroundColor = [UIColor blueColor];;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)playerButtonClick:(UIButton *)playButton
+{
+    [self presentMoviePlayerViewControllerAnimated:self.player];
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+
+#pragma mark - lazy
+- (MPMoviePlayerViewController *)player
+{
+   if(_player == nil)
+   {
+       // 1.创建播放器
+       NSURL *url = [NSURL URLWithString:self.videoPath];
+       _player = [[MPMoviePlayerViewController alloc]initWithContentURL:url];
+
+   }
+    return _player;
 }
-*/
 
 @end
