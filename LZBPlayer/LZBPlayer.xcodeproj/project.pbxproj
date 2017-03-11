@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18577FC01E5ADD8B007FEC8E /* LZBVideoPlayCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18577FBF1E5ADD8B007FEC8E /* LZBVideoPlayCollectionViewCell.m */; };
+		18577FC41E5AE8F4007FEC8E /* LZBVideoPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 18577FC31E5AE8F4007FEC8E /* LZBVideoPlayer.m */; };
 		18B36E791E59A11B00287D8B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B36E781E59A11B00287D8B /* main.m */; };
 		18B36E7C1E59A11B00287D8B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B36E7B1E59A11B00287D8B /* AppDelegate.m */; };
 		18B36E7F1E59A11B00287D8B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B36E7E1E59A11B00287D8B /* ViewController.m */; };
@@ -20,6 +22,10 @@
 		18B36EB61E59B8B400287D8B /* LZBAVPlayerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B36EB51E59B8B400287D8B /* LZBAVPlayerVC.m */; };
 		18B36EB91E59BA8000287D8B /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B36EB81E59BA8000287D8B /* BaseViewController.m */; };
 		18B36EBC1E59C23B00287D8B /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18B36EBB1E59C23B00287D8B /* MediaPlayer.framework */; };
+		18DD40B91E743B490021EF0A /* shortvideo_button_close@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18DD40B71E743B490021EF0A /* shortvideo_button_close@2x.png */; };
+		18DD40BA1E743B490021EF0A /* shortvideo_button_close@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18DD40B81E743B490021EF0A /* shortvideo_button_close@3x.png */; };
+		18DD40BD1E743B7A0021EF0A /* default_photo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18DD40BB1E743B7A0021EF0A /* default_photo@2x.png */; };
+		18DD40BE1E743B7A0021EF0A /* default_photo@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 18DD40BC1E743B7A0021EF0A /* default_photo@3x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +46,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		18577FBE1E5ADD8B007FEC8E /* LZBVideoPlayCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZBVideoPlayCollectionViewCell.h; sourceTree = "<group>"; };
+		18577FBF1E5ADD8B007FEC8E /* LZBVideoPlayCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZBVideoPlayCollectionViewCell.m; sourceTree = "<group>"; };
+		18577FC21E5AE8F4007FEC8E /* LZBVideoPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZBVideoPlayer.h; sourceTree = "<group>"; };
+		18577FC31E5AE8F4007FEC8E /* LZBVideoPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZBVideoPlayer.m; sourceTree = "<group>"; };
 		18B36E741E59A11B00287D8B /* LZBPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LZBPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18B36E781E59A11B00287D8B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		18B36E7A1E59A11B00287D8B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -65,6 +75,10 @@
 		18B36EB71E59BA8000287D8B /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		18B36EB81E59BA8000287D8B /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		18B36EBB1E59C23B00287D8B /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		18DD40B71E743B490021EF0A /* shortvideo_button_close@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shortvideo_button_close@2x.png"; sourceTree = "<group>"; };
+		18DD40B81E743B490021EF0A /* shortvideo_button_close@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shortvideo_button_close@3x.png"; sourceTree = "<group>"; };
+		18DD40BB1E743B7A0021EF0A /* default_photo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "default_photo@2x.png"; sourceTree = "<group>"; };
+		18DD40BC1E743B7A0021EF0A /* default_photo@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "default_photo@3x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +107,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		18577FC11E5AE8CC007FEC8E /* LZBVideoPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				18577FC21E5AE8F4007FEC8E /* LZBVideoPlayer.h */,
+				18577FC31E5AE8F4007FEC8E /* LZBVideoPlayer.m */,
+			);
+			path = LZBVideoPlayer;
+			sourceTree = "<group>";
+		};
 		18B36E6B1E59A11B00287D8B = {
 			isa = PBXGroup;
 			children = (
@@ -160,6 +183,7 @@
 		18B36EAA1E59B7D300287D8B /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				18DD40B61E743B0C0021EF0A /* Resource */,
 				18B36EAB1E59B7D300287D8B /* AVPlayer */,
 				18B36EAC1E59B7D300287D8B /* MPMoviePlayerController */,
 				18B36EAD1E59B7D300287D8B /* MPMoviePlayerViewController */,
@@ -172,8 +196,11 @@
 		18B36EAB1E59B7D300287D8B /* AVPlayer */ = {
 			isa = PBXGroup;
 			children = (
+				18577FC11E5AE8CC007FEC8E /* LZBVideoPlayer */,
 				18B36EB41E59B8B400287D8B /* LZBAVPlayerVC.h */,
 				18B36EB51E59B8B400287D8B /* LZBAVPlayerVC.m */,
+				18577FBE1E5ADD8B007FEC8E /* LZBVideoPlayCollectionViewCell.h */,
+				18577FBF1E5ADD8B007FEC8E /* LZBVideoPlayCollectionViewCell.m */,
 			);
 			path = AVPlayer;
 			sourceTree = "<group>";
@@ -202,6 +229,17 @@
 				18B36EBB1E59C23B00287D8B /* MediaPlayer.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		18DD40B61E743B0C0021EF0A /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				18DD40B71E743B490021EF0A /* shortvideo_button_close@2x.png */,
+				18DD40B81E743B490021EF0A /* shortvideo_button_close@3x.png */,
+				18DD40BB1E743B7A0021EF0A /* default_photo@2x.png */,
+				18DD40BC1E743B7A0021EF0A /* default_photo@3x.png */,
+			);
+			path = Resource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -271,6 +309,7 @@
 				TargetAttributes = {
 					18B36E731E59A11B00287D8B = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = Y2H57HDYD9;
 						ProvisioningStyle = Automatic;
 					};
 					18B36E8C1E59A11C00287D8B = {
@@ -310,8 +349,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18DD40BA1E743B490021EF0A /* shortvideo_button_close@3x.png in Resources */,
 				18B36E871E59A11B00287D8B /* LaunchScreen.storyboard in Resources */,
 				18B36E841E59A11B00287D8B /* Assets.xcassets in Resources */,
+				18DD40BD1E743B7A0021EF0A /* default_photo@2x.png in Resources */,
+				18DD40B91E743B490021EF0A /* shortvideo_button_close@2x.png in Resources */,
+				18DD40BE1E743B7A0021EF0A /* default_photo@3x.png in Resources */,
 				18B36E821E59A11B00287D8B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -341,8 +384,10 @@
 				18B36EB61E59B8B400287D8B /* LZBAVPlayerVC.m in Sources */,
 				18B36E7F1E59A11B00287D8B /* ViewController.m in Sources */,
 				18B36E7C1E59A11B00287D8B /* AppDelegate.m in Sources */,
+				18577FC41E5AE8F4007FEC8E /* LZBVideoPlayer.m in Sources */,
 				18B36E791E59A11B00287D8B /* main.m in Sources */,
 				18B36EB91E59BA8000287D8B /* BaseViewController.m in Sources */,
+				18577FC01E5ADD8B007FEC8E /* LZBVideoPlayCollectionViewCell.m in Sources */,
 				18B36EB31E59B89D00287D8B /* LZBMPMoviePlayerViewControllerVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -492,6 +537,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = Y2H57HDYD9;
 				INFOPLIST_FILE = LZBPlayer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -504,6 +550,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = Y2H57HDYD9;
 				INFOPLIST_FILE = LZBPlayer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -577,6 +624,7 @@
 				18B36EA31E59A11C00287D8B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		18B36EA41E59A11C00287D8B /* Build configuration list for PBXNativeTarget "LZBPlayerTests" */ = {
 			isa = XCConfigurationList;
@@ -585,6 +633,7 @@
 				18B36EA61E59A11C00287D8B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		18B36EA71E59A11C00287D8B /* Build configuration list for PBXNativeTarget "LZBPlayerUITests" */ = {
 			isa = XCConfigurationList;
@@ -593,6 +642,7 @@
 				18B36EA91E59A11C00287D8B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

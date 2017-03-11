@@ -10,7 +10,5 @@
 
 @interface BaseViewController : UIViewController
 @property (nonatomic, strong) NSString *videoPath;
-
-
 - (void)playerButtonClick:(UIButton *)playButton;
 @end

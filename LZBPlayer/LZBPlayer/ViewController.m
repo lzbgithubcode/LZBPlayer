@@ -25,6 +25,16 @@
     [super viewDidLoad];
      self.title = @"选择播放器播放视频";
     [self.view addSubview:self.tableView];
+    //测试视频
+    /*
+     @"http://120.25.226.186:32812/resources/videos/minion_01.mp4",
+     @"http://120.25.226.186:32812/resources/videos/minion_02.mp4",
+     @"http://120.25.226.186:32812/resources/videos/minion_03.mp4",
+     @"http://120.25.226.186:32812/resources/videos/minion_04.mp4",
+     @"http://120.25.226.186:32812/resources/videos/minion_05.mp4",
+     @"http://120.25.226.186:32812/resources/videos/minion_06.mp4",
+     @"http://120.25.226.186:32812/resources/videos/minion_07.mp4",
+     */
     
 }
 
@@ -46,10 +56,19 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    BaseViewController *baseVC = (BaseViewController *)self.playVCarray[indexPath.row];
-  //  baseVC.videoPath = @"http://m3u8back.gougouvideo.com/m3u8_yyyy?i=4275259";
-    baseVC.videoPath = @"http://v1.mukewang.com/3e35cbb0-c8e5-4827-9614-b5a355259010/L.mp4";
-    [self.navigationController pushViewController:baseVC animated:YES];
+    if(indexPath.row > 1)
+    {
+        LZBAVPlayerVC *vc = [[LZBAVPlayerVC alloc]init];
+        vc.videoPath = @"http://120.25.226.186:32812/resources/videos/minion_01.mp4";
+        [self presentViewController:vc animated:YES completion:nil];
+    }
+    else
+    {
+        BaseViewController *baseVC = (BaseViewController *)self.playVCarray[indexPath.row];
+        baseVC.videoPath = @"http://120.25.226.186:32812/resources/videos/minion_01.mp4";
+        [self.navigationController pushViewController:baseVC animated:YES];
+    }
+    
 }
 
 
@@ -67,7 +86,7 @@
 
 - (NSArray<NSString *> *)playStyleArray
 {
-    return @[@"MPMoviePlayerController播放视频",@"MPMoviePlayerViewController播放视频",@"AVPlayer播放视频"];
+    return @[@"MPMoviePlayerController播放视频",@"MPMoviePlayerViewController播放视频",@"AVPlayer播放视频当个视频"];
 }
 
 - (NSArray<UIViewController *> *)playVCarray

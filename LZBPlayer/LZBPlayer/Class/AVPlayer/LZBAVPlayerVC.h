@@ -6,8 +6,7 @@
 //  Copyright © 2017年 Apple. All rights reserved.
 //
 
-#import "BaseViewController.h"
-
-@interface LZBAVPlayerVC : BaseViewController
-
+#import <UIKit/UIKit.h>
+@interface LZBAVPlayerVC : UIViewController
+@property (nonatomic, strong)  NSString *videoPath;
 @end
