@@ -17,7 +17,7 @@
 @property (nonatomic, strong) AVPlayerItem *currentPlayerItem; //当前正在播放视频的Item
 @property (nonatomic, strong) AVPlayer *player;
 @property (nonatomic, strong) AVPlayerLayer *currentPlayerLayer; //当前图像层
-@property(nonatomic,  strong) NSURL *playPathURL;
+@property (nonatomic,  strong) NSURL *playPathURL;
 
 #pragma mark - parma参数
 /**
