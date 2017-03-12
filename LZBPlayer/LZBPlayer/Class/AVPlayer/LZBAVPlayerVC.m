@@ -37,7 +37,7 @@
     
     NSString *videoPath = self.videoPath;
     [[LZBVideoPlayer sharedInstance] playVideoUrl:[NSURL URLWithString:videoPath] coverImageurl:@"背景图片路径" showInSuperView:self.view];
-    [LZBVideoPlayer sharedInstance].openSoundWhenPlaying = NO;
+    [LZBVideoPlayer sharedInstance].openSoundWhenPlaying = YES;
     [[LZBVideoPlayer sharedInstance] setPlayerTimeProgressBlock:^(long residueTime) {
         [weakSelf reloadTimeProgress:residueTime];
     }];

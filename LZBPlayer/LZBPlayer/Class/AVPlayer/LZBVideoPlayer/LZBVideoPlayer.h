@@ -71,7 +71,7 @@
 @property (nonatomic, assign) BOOL stopWhenAppDidEnterBackground;
 
 /**
- * 默认YES.  当播放的时候是否打开声音
+ * 默认NO.  当播放的时候是否打开声音
  */
 @property(nonatomic, assign)  BOOL openSoundWhenPlaying;
 @end

@@ -10,6 +10,7 @@
 #import "LZBAVPlayerVC.h"
 #import "LZBMPMoviePlayerControllerVC.h"
 #import "LZBMPMoviePlayerViewControllerVC.h"
+#import "LZBPlayerMoreVideoVC.h"
 
 @interface ViewController ()<UITableViewDelegate, UITableViewDataSource>
 
@@ -56,7 +57,12 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if(indexPath.row > 1)
+    if(indexPath.row == 3)
+    {
+        LZBPlayerMoreVideoVC *vc = [[LZBPlayerMoreVideoVC alloc]init];
+        [self presentViewController:vc animated:YES completion:nil];
+    }
+   else if(indexPath.row == 2)
     {
         LZBAVPlayerVC *vc = [[LZBAVPlayerVC alloc]init];
         vc.videoPath = @"http://120.25.226.186:32812/resources/videos/minion_01.mp4";
@@ -86,12 +92,12 @@
 
 - (NSArray<NSString *> *)playStyleArray
 {
-    return @[@"MPMoviePlayerController播放视频",@"MPMoviePlayerViewController播放视频",@"AVPlayer播放视频当个视频"];
+    return @[@"MPMoviePlayerController播放视频",@"MPMoviePlayerViewController播放视频",@"AVPlayer播放视频当个视频",@"AVPlayer播放视频多个视频"];
 }
 
 - (NSArray<UIViewController *> *)playVCarray
 {
-    return @[[[LZBMPMoviePlayerControllerVC alloc]init],[[LZBMPMoviePlayerViewControllerVC alloc]init],[[LZBAVPlayerVC alloc]init]];
+    return @[[[LZBMPMoviePlayerControllerVC alloc]init],[[LZBMPMoviePlayerViewControllerVC alloc]init],[[LZBAVPlayerVC alloc]init],[[LZBPlayerMoreVideoVC alloc]init]];
 }
 
 

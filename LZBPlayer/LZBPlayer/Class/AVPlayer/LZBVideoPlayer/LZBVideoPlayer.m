@@ -311,7 +311,6 @@ const CGFloat checkSuperViewRate = 0.01; // Second
             break;
         case AVPlayerItemStatusReadyToPlay:{
             [self.player play];
-            self.player.muted = self.openSoundWhenPlaying;
              [self.showSuperView.layer insertSublayer:self.currentPlayerLayer atIndex:0];
         }
             break;
@@ -414,7 +413,7 @@ const CGFloat checkSuperViewRate = 0.01; // Second
 - (void)setOpenSoundWhenPlaying:(BOOL)openSoundWhenPlaying
 {
     _openSoundWhenPlaying = openSoundWhenPlaying;
-    self.player.muted = openSoundWhenPlaying;
+    self.player.muted = !openSoundWhenPlaying;
 }
 - (UIImageView *)coverImageView
 {

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		18577FC01E5ADD8B007FEC8E /* LZBVideoPlayCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18577FBF1E5ADD8B007FEC8E /* LZBVideoPlayCollectionViewCell.m */; };
 		18577FC41E5AE8F4007FEC8E /* LZBVideoPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 18577FC31E5AE8F4007FEC8E /* LZBVideoPlayer.m */; };
+		185CFAB61E756E9B00E56505 /* LZBPlayerMoreVideoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 185CFAB51E756E9B00E56505 /* LZBPlayerMoreVideoVC.m */; };
 		18B36E791E59A11B00287D8B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B36E781E59A11B00287D8B /* main.m */; };
 		18B36E7C1E59A11B00287D8B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B36E7B1E59A11B00287D8B /* AppDelegate.m */; };
 		18B36E7F1E59A11B00287D8B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B36E7E1E59A11B00287D8B /* ViewController.m */; };
@@ -50,6 +51,8 @@
 		18577FBF1E5ADD8B007FEC8E /* LZBVideoPlayCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZBVideoPlayCollectionViewCell.m; sourceTree = "<group>"; };
 		18577FC21E5AE8F4007FEC8E /* LZBVideoPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LZBVideoPlayer.h; sourceTree = "<group>"; };
 		18577FC31E5AE8F4007FEC8E /* LZBVideoPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LZBVideoPlayer.m; sourceTree = "<group>"; };
+		185CFAB41E756E9B00E56505 /* LZBPlayerMoreVideoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LZBPlayerMoreVideoVC.h; path = LZBVideoPlayer/LZBPlayerMoreVideoVC.h; sourceTree = "<group>"; };
+		185CFAB51E756E9B00E56505 /* LZBPlayerMoreVideoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LZBPlayerMoreVideoVC.m; path = LZBVideoPlayer/LZBPlayerMoreVideoVC.m; sourceTree = "<group>"; };
 		18B36E741E59A11B00287D8B /* LZBPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LZBPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18B36E781E59A11B00287D8B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		18B36E7A1E59A11B00287D8B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -199,6 +202,8 @@
 				18577FC11E5AE8CC007FEC8E /* LZBVideoPlayer */,
 				18B36EB41E59B8B400287D8B /* LZBAVPlayerVC.h */,
 				18B36EB51E59B8B400287D8B /* LZBAVPlayerVC.m */,
+				185CFAB41E756E9B00E56505 /* LZBPlayerMoreVideoVC.h */,
+				185CFAB51E756E9B00E56505 /* LZBPlayerMoreVideoVC.m */,
 				18577FBE1E5ADD8B007FEC8E /* LZBVideoPlayCollectionViewCell.h */,
 				18577FBF1E5ADD8B007FEC8E /* LZBVideoPlayCollectionViewCell.m */,
 			);
@@ -387,6 +392,7 @@
 				18577FC41E5AE8F4007FEC8E /* LZBVideoPlayer.m in Sources */,
 				18B36E791E59A11B00287D8B /* main.m in Sources */,
 				18B36EB91E59BA8000287D8B /* BaseViewController.m in Sources */,
+				185CFAB61E756E9B00E56505 /* LZBPlayerMoreVideoVC.m in Sources */,
 				18577FC01E5ADD8B007FEC8E /* LZBVideoPlayCollectionViewCell.m in Sources */,
 				18B36EB31E59B89D00287D8B /* LZBMPMoviePlayerViewControllerVC.m in Sources */,
 			);
