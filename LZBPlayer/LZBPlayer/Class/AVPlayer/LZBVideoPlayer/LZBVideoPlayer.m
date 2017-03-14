@@ -370,7 +370,7 @@ const CGFloat checkSuperViewRate = 0.01; // Second
 {
    if(self.stopWhenAppDidEnterBackground)
    {
-       [self stop];
+       [self pause];
    }
 }
 //app进入播放前台

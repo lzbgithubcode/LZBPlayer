@@ -43,7 +43,7 @@ static NSString *LZBVideoPlayCollectionViewCellID = @"LZBVideoPlayCollectionView
 - (void)viewDidDisappear:(BOOL)animated
 {
     [super viewDidDisappear:animated];
-    [self stopPlay];
+    [self stopPlayer];
 }
 
 
@@ -68,7 +68,6 @@ static NSString *LZBVideoPlayCollectionViewCellID = @"LZBVideoPlayCollectionView
 }
 - (void)collectionView:(UICollectionView *)collectionView willDisplayCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self handleQuickScroll];
     if(indexPath.row == 0 && !self.isFirst)
     {
         self.isFirst = YES;
@@ -101,103 +100,76 @@ static NSString *LZBVideoPlayCollectionViewCellID = @"LZBVideoPlayCollectionView
 
 - (void)playFirstCellWithFirst:(LZBVideoPlayCollectionViewCell *)firstCell
 {
-    __weak __typeof(self) weakSelf = self;
-    if(firstCell && firstCell.videoPath.length > 0)
-    {
-        self.playingCell = firstCell;
-        self.currentVideoPath =firstCell.videoPath;
-        NSURL *url = [NSURL URLWithString:firstCell.videoPath];
-        [[LZBVideoPlayer sharedInstance] playVideoUrl:url coverImageurl:@"背景图片" showInSuperView:firstCell.contentView];
-        [LZBVideoPlayer sharedInstance].openSoundWhenPlaying = YES;
-        //剩余时间
-        [[LZBVideoPlayer sharedInstance] setPlayerTimeProgressBlock:^(long residueTime) {
-            [weakSelf.playingCell reloadTimeLabelWithTime:residueTime];
-            if(residueTime == 0)
-            {
-                NSIndexPath *indexPath = weakSelf.playingCell.indexPath;
-                NSInteger nextIndex = indexPath.row + 1;
-                if(nextIndex < weakSelf.videoPaths.count)
-                {
-                    NSIndexPath *nextIndexPath = [NSIndexPath indexPathForRow:nextIndex inSection:0];
-                    [weakSelf.collectionView scrollToItemAtIndexPath:nextIndexPath atScrollPosition:UICollectionViewScrollPositionLeft animated:YES];
-                }
-                
-                return;
-            }
-            
-        }];
-    }
+    if(firstCell == nil) return;
+    if(firstCell.videoPath.length == 0) return;
+    
+    self.playingCell = firstCell;
+    self.currentVideoPath =firstCell.videoPath;
+    NSURL *url = [NSURL URLWithString:firstCell.videoPath];
+    [self startPlayerWithUrl:url coverImageUrl:@"设置背景图片" playerSuperView:firstCell.contentView];
+    
 }
 //停止播放
--(void)stopPlay
+-(void)stopPlayer
 {
     [[LZBVideoPlayer sharedInstance] stop];
     self.playingCell = nil;
     self.currentVideoPath = nil;
 }
 
--(void)handleQuickScroll{
+//开始播放
+- (void)startPlayerWithUrl:(NSURL *)url coverImageUrl:(NSString *)coverUrl playerSuperView:(UIView *)superView
+{
     
-    if (self.playingCell == nil) return;
-    NSArray *visiableCells = [self.collectionView visibleCells];
-    NSMutableArray *indexPaths = [NSMutableArray array];
-    for (LZBVideoPlayCollectionViewCell *cell in visiableCells) {
-        [indexPaths addObject:cell.indexPath];
-    }
-    
-    BOOL isPlayingCellVisiable = YES;
-    if (![indexPaths containsObject:self.playingCell.indexPath]) {
-        isPlayingCellVisiable = NO;
-    }
-    // 当前播放视频的cell移出视线， 或者cell被快速的循环利用了， 都要移除播放器
-    if (!isPlayingCellVisiable || ![self.playingCell.videoPath isEqualToString:self.currentVideoPath]) {
-        [self stopPlay];
-    }
+     __weak __typeof(self) weakSelf = self;
+    [[LZBVideoPlayer sharedInstance] playVideoUrl:url coverImageurl:coverUrl showInSuperView:superView];
+    [LZBVideoPlayer sharedInstance].openSoundWhenPlaying = YES;
+    //剩余时间
+    [[LZBVideoPlayer sharedInstance] setPlayerTimeProgressBlock:^(long residueTime) {
+        [weakSelf.playingCell reloadTimeLabelWithTime:residueTime];
+        if(residueTime == 0)
+        {
+            [weakSelf scrollToNextCell];
+        }
+        
+    }];
 }
+//滚动到下一个cell
+- (void)scrollToNextCell
+{
+    NSIndexPath *indexPath = self.playingCell.indexPath;
+    NSInteger nextIndex = indexPath.row + 1;
+    if(nextIndex < self.videoPaths.count)
+    {
+        NSIndexPath *nextIndexPath = [NSIndexPath indexPathForRow:nextIndex inSection:0];
+        [self.collectionView scrollToItemAtIndexPath:nextIndexPath atScrollPosition:UICollectionViewScrollPositionLeft animated:YES];
+    }
+    else
+        return;
+}
+
 - (void)processNextVideoPlayEventWithDirection:(LZBVideoScreenDirection)direction  index:(NSInteger)index
 {
 
-     __weak __typeof(self) weakSelf = self;
     NSArray *visiableCells = [self.collectionView visibleCells];
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index inSection:0];
     LZBVideoPlayCollectionViewCell  *nextCell = (LZBVideoPlayCollectionViewCell *)[self.collectionView cellForItemAtIndexPath:indexPath];
     if([self.playingCell isEqual:nextCell]) return;
-    if(self.playingCell != nextCell && nextCell != nil)
-    {
-        NSURL *url = [NSURL URLWithString:nextCell.videoPath];
-        [[LZBVideoPlayer sharedInstance] playVideoUrl:url coverImageurl:@"背景图片" showInSuperView:nextCell.contentView];
-        self.playingCell = nextCell;
-        self.currentVideoPath = nextCell.videoPath;
-        [LZBVideoPlayer sharedInstance].openSoundWhenPlaying = YES;
-         //剩余时间
-         [[LZBVideoPlayer sharedInstance] setPlayerTimeProgressBlock:^(long residueTime) {
-             [weakSelf.playingCell reloadTimeLabelWithTime:residueTime];
-             if(residueTime == 0)
-             {
-                 NSIndexPath *indexPath = weakSelf.playingCell.indexPath;
-                 NSInteger nextIndex = indexPath.row + 1;
-                 if(nextIndex < weakSelf.videoPaths.count)
-                 {
-                     NSIndexPath *nextIndexPath = [NSIndexPath indexPathForRow:nextIndex inSection:0];
-                     [weakSelf.collectionView scrollToItemAtIndexPath:nextIndexPath atScrollPosition:UICollectionViewScrollPositionLeft animated:YES];
-                 }
-                 
-                 return;
-             }
- 
-         }];
-        return;
+    if(nextCell == nil) return;
+    
+    //屏幕到中间时候，判断cell是否播放
+    if ([visiableCells containsObject:self.playingCell]) {
+        [self stopPlayer];
     }
+
+    //播放下一个视频
+    self.playingCell = nextCell;
+    self.currentVideoPath = nextCell.videoPath;
+    NSURL *url = [NSURL URLWithString:nextCell.videoPath];
+   [self startPlayerWithUrl:url coverImageUrl:@"设置背景图片" playerSuperView:nextCell.contentView];
     
     
-    // 正在播放视频的那个cell移出视野, 则停止播放
-    BOOL isPlayingCellVisiable = YES;
-    if (![visiableCells containsObject:self.playingCell.indexPath]) {
-        isPlayingCellVisiable = NO;
-    }
-    if (!isPlayingCellVisiable && self.playingCell) {
-        [self stopPlay];
-    }
+   
 }
 
 #pragma mark- lazy
