@@ -370,13 +370,13 @@ const CGFloat checkSuperViewRate = 0.01; // Second
 {
    if(self.stopWhenAppDidEnterBackground)
    {
-       [self pause];
+       [self pause];  //暂停播放
    }
 }
 //app进入播放前台
 - (void)appDidEnterPlayGround
 {
-    [self playWithResume];
+    [self playWithResume];  //继续播放
 }
 //app视频播放完成
 -(void)playerItemDidPlayToEnd:(NSNotification *)note

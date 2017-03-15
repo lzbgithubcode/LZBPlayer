@@ -129,6 +129,7 @@ static NSString *LZBVideoPlayCollectionViewCellID = @"LZBVideoPlayCollectionView
         [weakSelf.playingCell reloadTimeLabelWithTime:residueTime];
         if(residueTime == 0)
         {
+            //播放完成，自动滚动到下一页
             [weakSelf scrollToNextCell];
         }
         
@@ -150,19 +151,19 @@ static NSString *LZBVideoPlayCollectionViewCellID = @"LZBVideoPlayCollectionView
 
 - (void)processNextVideoPlayEventWithDirection:(LZBVideoScreenDirection)direction  index:(NSInteger)index
 {
-
+   //获取当前屏幕的cell
     NSArray *visiableCells = [self.collectionView visibleCells];
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index inSection:0];
     LZBVideoPlayCollectionViewCell  *nextCell = (LZBVideoPlayCollectionViewCell *)[self.collectionView cellForItemAtIndexPath:indexPath];
     if([self.playingCell isEqual:nextCell]) return;
     if(nextCell == nil) return;
     
-    //屏幕到中间时候，判断cell是否播放
+    //屏幕到中间时候，停止上一个cell视频播放
     if ([visiableCells containsObject:self.playingCell]) {
         [self stopPlayer];
     }
 
-    //播放下一个视频
+    //开始播放下一个视频
     self.playingCell = nextCell;
     self.currentVideoPath = nextCell.videoPath;
     NSURL *url = [NSURL URLWithString:nextCell.videoPath];
